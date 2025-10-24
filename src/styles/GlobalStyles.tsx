@@ -18,8 +18,8 @@ export const GlobalStyles = () => (
         --color-red400: hsl(3, 86%, 64%);
         --color-red500: hsl(3, 71%, 56%);
         --color-red700: hsl(3, 77%, 44%);
-        --light-gradient: linear-gradient(180deg, #ebf2fc 0%, #eefbf9 100%);
-        --dark-gradient: linear-gradient(180deg, #04091b 0%, #091540 100%);
+        --light-gradient: linear-gradient(100deg, rgba(235, 242, 252, 1) 0%, rgba(238, 251, 249, 1) 100%);
+        --dark-gradient: linear-gradient(100deg, rgba(4, 9, 27, 1) 0%, rgba(9, 21, 64, 1) 100%);
         /* spacing */
         --spacing-0: ${convertPxToRem(0)};
         --spacing-025: ${convertPxToRem(2)};
