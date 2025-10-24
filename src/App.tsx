@@ -1,7 +1,13 @@
+import { ThemeProvider } from "./components/Theme/ThemeContext";
+
 import { GlobalStyles } from "./styles/GlobalStyles";
 
 function App() {
-	return <GlobalStyles />;
+	return (
+		<ThemeProvider>
+			<GlobalStyles />
+		</ThemeProvider>
+	);
 }
 
 export default App;
