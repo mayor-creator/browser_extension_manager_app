@@ -9,7 +9,7 @@ interface Props {
 	bgColor: string;
 }
 
-const HeaderContainer = styled.div<Props>`
+const HeaderContainer = styled.header<Props>`
   background: ${(props) => props.bgColor};
   border-radius: var(--radius-10);
   display: flex;
