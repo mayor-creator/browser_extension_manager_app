@@ -33,7 +33,9 @@ export const Header = () => {
 
 	return (
 		<HeaderContainer
-			bgColor={theme === "Dark" ? "var(--color-neutral800)" : "#FBFDFE"}
+			bgColor={
+				theme === "Dark" ? "var(--color-neutral800)" : "var(--color-neutral0)"
+			}
 		>
 			<div>
 				<img src={logo} alt="" />
