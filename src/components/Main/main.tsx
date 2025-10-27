@@ -1,6 +1,13 @@
 import styled from "@emotion/styled";
 import { useState } from "react";
 import { ExtensionsButton } from "../UI/extensionButton";
+import { ExtensionCard } from "../UI/extensionCard";
+
+const MainContainer = styled.main`
+	display: flex;
+	flex-direction: column;
+	gap: var(--spacing-400);
+`;
 
 const ExtensionsContainer = styled.div`
   display: flex;
@@ -26,7 +33,7 @@ export const Main = () => {
 	const [isActiveFilter, setIsActiveFilter] = useState("All");
 
 	return (
-		<main>
+		<MainContainer>
 			<ExtensionsContainer>
 				<Title>Extensions List</Title>
 				<FilterContainer>
@@ -47,6 +54,7 @@ export const Main = () => {
 					></ExtensionsButton>
 				</FilterContainer>
 			</ExtensionsContainer>
-		</main>
+			<ExtensionCard></ExtensionCard>
+		</MainContainer>
 	);
 };
