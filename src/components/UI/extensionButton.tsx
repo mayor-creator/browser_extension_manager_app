@@ -10,6 +10,8 @@ interface ButtonProps {
 interface Props {
 	bgColor: string;
 	textColor: string;
+	theme: string;
+	active?: boolean;
 }
 
 const Button = styled.button<Props>`
@@ -30,6 +32,32 @@ const Button = styled.button<Props>`
   padding-right: var(--spacing-250);
   padding-top: var(--spacing-100);
   padding-bottom: var(--spacing-125);
+
+	&:hover {
+		${({ active, theme }) => {
+			if (active && theme === "Dark") {
+				return `
+				  background: var(--color-red500);
+					color: var(--color-neutral900);
+				`;
+			} else if (active && theme !== "Dark") {
+				return `
+					background: var(--color-red500);
+					color: var(--color-neutral0);
+				`;
+			} else if (!active && theme === "Dark") {
+				return `
+					background: var(--color-neutral600);
+					color: var(--color-neutral0);
+				`;
+			} else {
+				return `
+					background: var(--color-neutral0);
+					color: var(--color-neutral900);
+				`;
+			}
+		}}
+	}
 `;
 
 export const ExtensionsButton = ({ label, active, onClick }: ButtonProps) => {
@@ -59,6 +87,8 @@ export const ExtensionsButton = ({ label, active, onClick }: ButtonProps) => {
 			bgColor={bgColor}
 			textColor={textColor}
 			onClick={onClick}
+			active={active}
+			theme={theme}
 		>
 			{label}
 		</Button>
