@@ -33,6 +33,13 @@ const FilterContainer = styled.div`
 export const Main = () => {
 	const [isActiveFilter, setIsActiveFilter] = useState("All");
 
+	const filterData = data.filter((item) => {
+		if (isActiveFilter === "All") return true;
+		if (isActiveFilter === "Active") return item.isActive;
+		if (isActiveFilter === "Inactive") return !item.isActive;
+		return true;
+	});
+
 	return (
 		<MainContainer>
 			<ExtensionsContainer>
@@ -55,7 +62,7 @@ export const Main = () => {
 					></ExtensionsButton>
 				</FilterContainer>
 			</ExtensionsContainer>
-			{data.map((item) => (
+			{filterData.map((item) => (
 				<ExtensionCard
 					key={item.name}
 					logo={item.logo}
