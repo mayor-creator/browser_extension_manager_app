@@ -1,7 +1,7 @@
 import styled from "@emotion/styled";
-import moon from "../../assets/images/icon-moon.svg";
-import sun from "../../assets/images/icon-sun.svg";
-import logo from "../../assets/images/logo.svg";
+import moon from "../../../public/images/icon-moon.svg";
+import sun from "../../../public/images/icon-sun.svg";
+import logo from "../../../public/images/logo.svg";
 import { convertPxToRem } from "../../util/convertPxToRem";
 import { useTheme } from "../Theme/useThemeContext";
 

@@ -1,5 +1,4 @@
 import styled from "@emotion/styled";
-import logoDevLens from "../../assets/images/logo-devlens.svg";
 import { useTheme } from "../Theme/useThemeContext";
 import { Toggle } from "./toggle";
 
@@ -7,6 +6,19 @@ type Props = {
 	background: string;
 	border: string;
 };
+
+interface ButtonProps {
+	bgColor: string;
+	textColor: string;
+	border: string;
+}
+
+interface ExtensionCardDataProps {
+	logo: string;
+	name: string;
+	description: string;
+	isActive: boolean;
+}
 
 const ExtensionCardContainer = styled.div<Props>`
 	background: ${(props) => props.background};
@@ -50,12 +62,6 @@ const ExtensionAction = styled.div`
 	justify-content: space-between;
 `;
 
-interface ButtonProps {
-	bgColor: string;
-	textColor: string;
-	border: string;
-}
-
 const Button = styled.button<ButtonProps>`
   background: ${(props) => props.bgColor};
   border-radius: var(--radius-full);
@@ -73,7 +79,12 @@ const Button = styled.button<ButtonProps>`
   padding-bottom: var(--spacing-100);
 `;
 
-export const ExtensionCard = () => {
+export const ExtensionCard = ({
+	logo,
+	name,
+	description,
+	isActive,
+}: ExtensionCardDataProps) => {
 	const { theme } = useTheme();
 
 	const isDark = theme === "Dark";
@@ -94,13 +105,11 @@ export const ExtensionCard = () => {
 		<ExtensionCardContainer background={background} border={border}>
 			<ExtensionInfoContainer>
 				<div>
-					<img src={logoDevLens} alt="" height={60} width={60} />
+					<img src={logo} alt="" height={60} width={60} />
 				</div>
 				<ExtensionDetailsContainer>
-					<ExtensionName>DevLens</ExtensionName>
-					<ExtensionDescription>
-						Quickly inspect page layouts and visualize element boundaries.
-					</ExtensionDescription>
+					<ExtensionName>{name}</ExtensionName>
+					<ExtensionDescription>{description}</ExtensionDescription>
 				</ExtensionDetailsContainer>
 			</ExtensionInfoContainer>
 			<ExtensionAction>
@@ -112,7 +121,7 @@ export const ExtensionCard = () => {
 				>
 					Remove
 				</Button>
-				<Toggle></Toggle>
+				<Toggle isActive={isActive}></Toggle>
 			</ExtensionAction>
 		</ExtensionCardContainer>
 	);

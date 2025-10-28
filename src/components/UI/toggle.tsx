@@ -2,6 +2,10 @@ import styled from "@emotion/styled";
 import { useId, useState } from "react";
 import { convertPxToRem } from "../../util/convertPxToRem";
 
+interface ToggleProps {
+	isActive: boolean;
+}
+
 const Label = styled.label`
   display: flex;
   align-items: center;
@@ -40,8 +44,8 @@ const ToggleSlider = styled.span<{ isChecked: boolean }>`
   }
 `;
 
-export const Toggle = () => {
-	const [isChecked, setIsChecked] = useState(true);
+export const Toggle = ({ isActive }: ToggleProps) => {
+	const [isChecked, setIsChecked] = useState(isActive);
 	const id = useId();
 
 	const toggle = (event: React.ChangeEvent<HTMLInputElement>) => {

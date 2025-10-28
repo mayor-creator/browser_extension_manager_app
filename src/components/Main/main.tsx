@@ -1,5 +1,6 @@
 import styled from "@emotion/styled";
 import { useState } from "react";
+import data from "../../data/data.json";
 import { ExtensionsButton } from "../UI/extensionButton";
 import { ExtensionCard } from "../UI/extensionCard";
 
@@ -54,7 +55,15 @@ export const Main = () => {
 					></ExtensionsButton>
 				</FilterContainer>
 			</ExtensionsContainer>
-			<ExtensionCard></ExtensionCard>
+			{data.map((item) => (
+				<ExtensionCard
+					key={item.name}
+					logo={item.logo}
+					name={item.name}
+					description={item.description}
+					isActive={item.isActive}
+				></ExtensionCard>
+			))}
 		</MainContainer>
 	);
 };
