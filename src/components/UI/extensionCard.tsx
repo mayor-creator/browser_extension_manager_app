@@ -18,6 +18,7 @@ interface ExtensionCardDataProps {
 	name: string;
 	description: string;
 	isActive: boolean;
+	onRemoveExtension: () => void;
 }
 
 const ExtensionCardContainer = styled.div<Props>`
@@ -84,6 +85,7 @@ export const ExtensionCard = ({
 	name,
 	description,
 	isActive,
+	onRemoveExtension,
 }: ExtensionCardDataProps) => {
 	const { theme } = useTheme();
 
@@ -118,6 +120,7 @@ export const ExtensionCard = ({
 					bgColor={background}
 					textColor={textColor}
 					border={border}
+					onClick={onRemoveExtension}
 				>
 					Remove
 				</Button>

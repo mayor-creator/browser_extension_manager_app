@@ -32,13 +32,21 @@ const FilterContainer = styled.div`
 
 export const Main = () => {
 	const [isActiveFilter, setIsActiveFilter] = useState("All");
+	const [extensionData, setExtensionData] = useState(data);
 
-	const filterData = data.filter((item) => {
+	const filterData = extensionData.filter((item) => {
 		if (isActiveFilter === "All") return true;
 		if (isActiveFilter === "Active") return item.isActive;
 		if (isActiveFilter === "Inactive") return !item.isActive;
 		return true;
 	});
+
+	//removing extension data
+	const handleRemoveExtension = (name: string) => {
+		setExtensionData((prevData) =>
+			prevData.filter((item) => item.name !== name),
+		);
+	};
 
 	return (
 		<MainContainer>
@@ -69,6 +77,7 @@ export const Main = () => {
 					name={item.name}
 					description={item.description}
 					isActive={item.isActive}
+					onRemoveExtension={() => handleRemoveExtension(item.name)}
 				></ExtensionCard>
 			))}
 		</MainContainer>
