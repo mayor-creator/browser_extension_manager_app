@@ -10,7 +10,7 @@ const MainContainer = styled.main`
 	gap: var(--spacing-400);
 `;
 
-const ExtensionsContainer = styled.div`
+const ExtensionsTitleContainer = styled.div`
   display: flex;
   flex-direction: column;
   gap: var(--spacing-300);
@@ -28,6 +28,12 @@ const FilterContainer = styled.div`
   display: flex;
   gap: var(--spacing-125);
   justify-content: center;
+`;
+
+const ExtensionContainer = styled.div`
+	display: flex;
+  flex-direction: column;
+  gap: var(--spacing-150);
 `;
 
 export const Main = () => {
@@ -50,7 +56,7 @@ export const Main = () => {
 
 	return (
 		<MainContainer>
-			<ExtensionsContainer>
+			<ExtensionsTitleContainer>
 				<Title>Extensions List</Title>
 				<FilterContainer>
 					<ExtensionsButton
@@ -69,17 +75,20 @@ export const Main = () => {
 						onClick={() => setIsActiveFilter("Inactive")}
 					></ExtensionsButton>
 				</FilterContainer>
-			</ExtensionsContainer>
-			{filterData.map((item) => (
-				<ExtensionCard
-					key={item.name}
-					logo={item.logo}
-					name={item.name}
-					description={item.description}
-					isActive={item.isActive}
-					onRemoveExtension={() => handleRemoveExtension(item.name)}
-				></ExtensionCard>
-			))}
+			</ExtensionsTitleContainer>
+
+			<ExtensionContainer>
+				{filterData.map((item) => (
+					<ExtensionCard
+						key={item.name}
+						logo={item.logo}
+						name={item.name}
+						description={item.description}
+						isActive={item.isActive}
+						onRemoveExtension={() => handleRemoveExtension(item.name)}
+					></ExtensionCard>
+				))}
+			</ExtensionContainer>
 		</MainContainer>
 	);
 };

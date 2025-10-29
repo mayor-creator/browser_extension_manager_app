@@ -9,7 +9,7 @@ interface ToggleProps {
 const Label = styled.label`
   display: flex;
   align-items: center;
-  gap: ${convertPxToRem(24)};
+  gap: var(--spacing-300);
   cursor: pointer;
   position: relative;
 `;
@@ -24,7 +24,7 @@ const ToggleInput = styled.input`
 const ToggleSlider = styled.span<{ isChecked: boolean }>`
   width: ${convertPxToRem(36)};
   height: ${convertPxToRem(20)};
-  border-radius: ${convertPxToRem(16)};
+  border-radius: var(--radius-16);
   position: relative;
   transition: background-color 0.2s;
   background-color: ${({ isChecked }) =>

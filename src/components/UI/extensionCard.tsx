@@ -50,7 +50,6 @@ const ExtensionName = styled.p`
 `;
 
 const ExtensionDescription = styled.p`
-  color: var(--color-neutral300);
 	font-size: var(--textPresetFive-fontSize);
   font-weight: var(--textPresetFive-fontWeight);
   line-height: var(--textPresetFive-lineHeight);
