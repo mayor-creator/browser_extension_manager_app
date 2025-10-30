@@ -151,7 +151,7 @@ export const GlobalStyles = () => (
       /* typography */
       @font-face {
         font-family: "Noto Sans";
-        src: url("../../public/static/NotoSans-Regular.ttf");
+        src: url("/static/NotoSans-Regular.ttf");
         font-weight: 400;
         font-style: normal;
         font-display: swap;
@@ -159,7 +159,7 @@ export const GlobalStyles = () => (
       
       @font-face {
         font-family: "Noto Sans";
-        src: url("../../public/static/NotoSans-Medium.ttf");
+        src: url("/static/NotoSans-Medium.ttf");
         font-weight: 500;
         font-style: normal;
         font-display: swap;
@@ -167,7 +167,7 @@ export const GlobalStyles = () => (
 
       @font-face {
         font-family: "Noto Sans";
-        src: url("../../public/static/NotoSans-Bold.ttf");
+        src: url("/static/NotoSans-Bold.ttf");
         font-weight: 700;
         font-style: normal;
         font-display: swap;
