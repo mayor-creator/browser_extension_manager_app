@@ -36,6 +36,7 @@ export const GlobalStyles = () => (
         --spacing-600: ${convertPxToRem(48)};
         --spacing-800: ${convertPxToRem(64)};
         --spacing-1000: ${convertPxToRem(80)};
+        --spacing-2000: ${convertPxToRem(135)};
         --radius-0: ${convertPxToRem(0)};
         --radius-4: ${convertPxToRem(4)};
         --radius-6: ${convertPxToRem(6)};

@@ -1,6 +1,7 @@
 import styled from "@emotion/styled";
 import { useState } from "react";
 import data from "../../data/data.json";
+import { medialQuery } from "../../styles/Breakpoints";
 import { ExtensionsButton } from "../UI/extensionButton";
 import { ExtensionCard } from "../UI/extensionCard";
 
@@ -14,6 +15,16 @@ const ExtensionsTitleContainer = styled.div`
   display: flex;
   flex-direction: column;
   gap: var(--spacing-300);
+
+	${medialQuery.tablet} {
+	  flex-direction: row;
+		justify-content: space-between;
+	}
+
+	${medialQuery.desktop} {
+	  flex-direction: row;
+		justify-content: space-between;
+	}
 `;
 
 const Title = styled.h1`
@@ -34,6 +45,16 @@ const ExtensionContainer = styled.div`
 	display: flex;
   flex-direction: column;
   gap: var(--spacing-150);
+
+	${medialQuery.tablet} {
+	  display: grid;
+		grid-template-columns: 1fr 1fr;
+	}
+
+	${medialQuery.desktop}{
+	  display: grid;
+		grid-template-columns: 1fr 1fr 1fr;
+	}
 `;
 
 export const Main = () => {
